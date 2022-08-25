@@ -102,73 +102,76 @@ case "$1" in
 		cd ${PROJECT_DIR}
 		echo "********************************************************"
 		echo `date` ":INFO: STOPPING APPLICATION" >> ${LOG_FILE}
-		pm2_stop &>> ${LOG_FILE}
+		pm2_stop >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: APPLICATION STOPPED" >> ${LOG_FILE}
 	
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL STARTED" >> ${LOG_FILE}
-		pull &>> ${LOG_FILE}
+		pull >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL COMPLETED" >> ${LOG_FILE}
 		
 		echo "********************************************************"
 		echo `date` ":INFO: INSTALL STARTED" >> ${LOG_FILE}
-		install &>> ${LOG_FILE}
+		install >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: INSTALL COMPLETED" >> ${LOG_FILE}
 		
 		echo "********************************************************"
 		echo `date` ":INFO: BUILD STARTED" >> ${LOG_FILE}
-		build &>> ${LOG_FILE}
+		build >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: BUILD PULL COMPLETED" >> ${LOG_FILE}
 		
 		echo "********************************************************"
 		echo `date` ":INFO: STARTING APPLICATION" >> ${LOG_FILE}
-		pm2_start &>> ${LOG_FILE}
+		pm2_start >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: APPLICATION STARTED" >> ${LOG_FILE}
+	;;
 	1)
 		cd ${PROJECT_DIR}
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL STARTED" >> ${LOG_FILE}
-		git_pull &>> ${LOG_FILE}
+		pull >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL COMPLETED" >> ${LOG_FILE}
+	;;
 	2)
 		cd ${PROJECT_DIR}
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL STARTED" >> ${LOG_FILE}
-		git_pull &>> ${LOG_FILE}
+		pull >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL COMPLETED" >> ${LOG_FILE}
 		
 		echo "********************************************************"
 		echo `date` ":INFO: INSTALL STARTED" >> ${LOG_FILE}
-		install &>> ${LOG_FILE}
+		install >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: INSTALL COMPLETED" >> ${LOG_FILE}
+	;;
 	3)
 		cd ${PROJECT_DIR}
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL STARTED" >> ${LOG_FILE}
-		pull &>> ${LOG_FILE}
+		pull >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: GIT PULL COMPLETED" >> ${LOG_FILE}
 		
 		echo "********************************************************"
 		echo `date` ":INFO: INSTALL STARTED" >> ${LOG_FILE}
-		install &>> ${LOG_FILE}
+		install >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: INSTALL COMPLETED" >> ${LOG_FILE}
 		
 		echo "********************************************************"
 		echo `date` ":INFO: BUILD STARTED" >> ${LOG_FILE}
-		build &>> ${LOG_FILE}
+		build >> ${LOG_FILE}
 		echo "********************************************************"
 		echo `date` ":INFO: BUILD PULL COMPLETED" >> ${LOG_FILE}
-
+esac
 
 echo "+++++++++++++++++++++++++++" >> ${LOG_FILE}
 echo `date` ":INFO: SCRIPT COMPLETED" >> ${LOG_FILE}
